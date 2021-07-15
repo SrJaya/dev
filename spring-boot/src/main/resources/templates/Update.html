@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+ <body>
+ 
+<form action="#" 
+  th:action="@{/regionUpdate/{id}(id=${region.id})}" 
+  th:object="${region}" 
+  method="post">
+    <label for="id">id</label>
+    <input type="text" th:field="*{id}" id="id" placeholder="ID">
+    
+    <label for="name">name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    
+    <label for="region">region</label>
+    <input type="text" th:field="*{regions}" id="regions" placeholder="Region">
+    
+    <label for="course">flag</label>
+    <input type="text" th:field="*{flag}" id="flag" placeholder="Flag">
+    
+    <label for="enableDatamapper">enableDatamapper</label>
+    <input type="value" th:field="*{enableDatamapper}" id="enableDatamapper" placeholder="EnabaleDatamapper">
+    
+    <label for="isActivated">isActivated</label>
+    <input type="value" th:field="*{isActivated}" id="isActivated" placeholder="IsActivated">
+    
+    
+    <label for="resultCount">resultCount</label>
+    <input type="text" th:field="*{resultCount}" id="resultCount" placeholder="ResultCount">
+    
+    <label for="googleJobPostingEndpoint">googleJobPostingEndpoint</label>
+    <input type="text" th:field="*{googleJobPostingEndpoint}" id="googleJobPostingEndpoint" placeholder="googleJobPostingEndpoint">
+    
+    <input type="submit" value="Update Region"> 
+      
+</form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+</body>

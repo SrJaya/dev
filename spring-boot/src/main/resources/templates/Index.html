@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Job Management System</title>
+</head>
+<body>
+	<div aling="center">
+		<h1>List Of Regions</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>name</th>
+					<th>region</th>
+					<th>flag</th>
+					<th>enableDatamapper</th>
+					<th>isActivated</th>
+					<th>resultCount</th>
+					<th>googleJobPostingEndpoint</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="region : ${listOfRegions}">
+					<td th:text="${region.id}"></td>
+					<td th:text="${region.name}"></td>
+					<td th:text="${region.regions}"></td>
+					<td th:text="${region.flag}"></td>
+					<td th:value="${region.enableDatamapper}"></td>
+					<td th:value="${region.isActivated}"></td>
+					<td th:text="${region.resultCount}"></td>
+					<td th:text="${region.googleJobPostingEndpoint}"></td>
+					<td>
+					<form method="POST"
+							th:action="@{/region/{id}(id=${region.id})}">
+							<button type="submit" name="submit" value="value"
+								class="link-button">Edit</button>
+						</form>
+					</td>
+					<td>
+						<form method="POST"
+							th:action="@{/disableById/{id}(id=${region.id})}">
+							<button type="submit" name="submit" value="value"
+								class="link-button">Disable Region</button>
+						</form>
+					</td>
+					<td>
+						<form method="POST"
+							th:action="@{/enableById/{id}(id=${region.id})}">
+							<button type="submit" name="submit" value="value"
+								class="link-button">Enable Region</button>
+						</form>
+					</td>
+					<!-- <td><a th:href="@{/disableById/{id}(id=${region.id})}">Disable
+							Region</a></td>
+					<td><a th:href="@{/enableById/{id}(id=${region.id})}">Enable
+							Region</a></td> -->
+				</tr>
+			</tbody>
+		</table>
+
+		</h1>
+				
+					
+					
+					
+					
+			
